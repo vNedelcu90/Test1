@@ -1,16 +1,714 @@
 [
     {
-        "id": "a9cbd4fb4c18d665",
+        "id": "438d7bbd.346164",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "IDS ",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ea608869c0300b60",
+        "type": "tab",
+        "label": "POST Body test",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "0bf1cd6f4b1bd496",
+        "id": "93978e32abdcb633",
+        "type": "tab",
+        "label": "mqtt ex",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4dc097a62edf8ce5",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d69f010f88d7245c",
+        "type": "tab",
+        "label": "button with differnt colors",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5e3df4704a9ea4cf",
+        "type": "tab",
+        "label": "[Example] SMTP mail",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b8176b44fcdb7bbf",
+        "type": "junction",
+        "z": "438d7bbd.346164",
+        "x": 780,
+        "y": 620,
+        "wires": [
+            [
+                "dfc9c443a2df0047"
+            ]
+        ]
+    },
+    {
+        "id": "cfa0bfa0973afc7e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "effc18dde6adcb36",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "gxdb059x.gx.ro.int.vitesco.com/",
+        "port": "8883",
+        "tls": "bd9317d71adb8575",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bd9317d71adb8575",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "d708a4d8619ee15f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1191ee52ec79052a",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d708a4d8619ee15f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "76e8d8e0768f8038",
+        "type": "ui_group",
+        "name": "AGV rufen",
+        "tab": "034773db132ad7fd",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eaf1dea94ef54bd6",
+        "type": "ui_group",
+        "name": "Create order for AGV2",
+        "tab": "034773db132ad7fd",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d21eab378c12acdb",
+        "type": "mqtt-broker",
+        "name": "Hive",
+        "broker": "ff9818454a894d279d0993997017946a.s2.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "bd9317d71adb8575",
+        "clientid": "clientId-72uQhAyWkM",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "034773db132ad7fd",
+        "type": "ui_tab",
+        "name": "LHK",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "faa18b224db493df",
+        "type": "ui_tab",
+        "name": "v1",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "88922236a92fef8f",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "faa18b224db493df",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "7ea0ba9fcdf89fb3",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "b805168de9ab196c",
+        "type": "websocket-listener",
+        "path": "/authorize",
+        "wholemsg": "false"
+    },
+    {
+        "id": "0b940c28edbde0f0",
+        "type": "websocket-client",
+        "path": "gxdb059x.gx.ro.int.vitesco.com",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "1",
+        "subprotocol": ""
+    },
+    {
+        "id": "c4a39d44b18097ac",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "10.222.160.26/",
+        "port": "1883",
+        "tls": "bd9317d71adb8575",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "29573401f5cec91f",
+        "type": "ui_group",
+        "name": "",
+        "tab": "ad178e2d366b81a4",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ad178e2d366b81a4",
+        "type": "ui_tab",
+        "name": "EPF Empty",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "26332cb7.024dd4",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e45fadc8.79108",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e45fadc8.79108",
+        "type": "ui_tab",
+        "name": "Start",
+        "icon": "dashboard"
+    },
+    {
+        "id": "c20e25fb6de0c5b9",
+        "type": "ui_group",
+        "name": "Racking Remote",
+        "tab": "a28ff08f.3a822",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a28ff08f.3a822",
+        "type": "ui_tab",
+        "name": "SVG",
+        "icon": "dashboard",
+        "order": 38,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7a5d5f88.d2ba6",
+        "type": "ui_group",
+        "name": "button",
+        "tab": "883914f8.c9986",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "883914f8.c9986",
+        "type": "ui_tab",
+        "name": "test",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "111148ee.cdb697",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "31529018.f1ea8",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "111148ee.cdb697",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "70abbb93.b66df4",
+        "type": "ui_group",
+        "name": "Control Panel",
+        "tab": "4ce637e8.4ba768",
+        "order": 2,
+        "disp": true,
+        "width": "8"
+    },
+    {
+        "id": "4ce637e8.4ba768",
+        "type": "ui_tab",
+        "name": "Button Panel",
+        "icon": "dashboard"
+    },
+    {
+        "id": "7755f7ad25612a3b",
         "type": "inject",
-        "z": "a9cbd4fb4c18d665",
+        "z": "438d7bbd.346164",
+        "name": "Flow start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "d1c659af57fb18a8",
+                "d178dc1ab8aae8e6"
+            ]
+        ]
+    },
+    {
+        "id": "d1c659af57fb18a8",
+        "type": "http request",
+        "z": "438d7bbd.346164",
+        "name": "HTTP Request ->IDS Camera",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "http://10.222.174.121/vapps/classifier/resultsources/last",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "3d1fc92215d519a5",
+                "562cba51b2a05010"
+            ]
+        ]
+    },
+    {
+        "id": "3d1fc92215d519a5",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "Camera result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2235e4b61d81b47b",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 970,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "562cba51b2a05010",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Pallets First check",
+        "func": "/* Function Desc */\n\nvar x1 = msg.payload.data.Data;\n\nx1 = x1.replace(/[\\[\\]']+/g, \"\");            // delete [\nx1 = x1.replace(/[\\]\\]']+/g, \"\");            // delete ]\nx1 = x1.replace(/[\\{}\\]']+/g, \"\");           // delete {}\nx1 = x1.replace(/[\\\"\"\\]']+/g, \"\");           // delete \"\"\nx1 = x1.split(\",\")\n\nflow.set(\"p1FCheck\", x1[1].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p2FCheck\", x1[29].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p3FCheck\", x1[36].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p4FCheck\", x1[43].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p5FCheck\", x1[50].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p6FCheck\", x1[57].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p7FCheck\", x1[64].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p8FCheck\", x1[71].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p9FCheck\", x1[78].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p10FCheck\", x1[8].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p11FCheck\", x1[15].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p12FCheck\", x1[22].replace(\"Inference:Class:\", \"\"))\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "2235e4b61d81b47b",
+                "332ccfc8e9748484"
+            ]
+        ]
+    },
+    {
+        "id": "d178dc1ab8aae8e6",
+        "type": "delay",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 480,
+        "wires": [
+            [
+                "ba198d475fdfac3f"
+            ]
+        ]
+    },
+    {
+        "id": "ba198d475fdfac3f",
+        "type": "http request",
+        "z": "438d7bbd.346164",
+        "name": "HTTP Request ->IDS Camera",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "http://10.222.174.121/vapps/classifier/resultsources/last",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "e773fd8bd15b6e79",
+                "e16cb6e44bf20795"
+            ]
+        ]
+    },
+    {
+        "id": "e773fd8bd15b6e79",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Pallets Seccond Check",
+        "func": "var x1 = msg.payload.data.Data;\n\nx1 = x1.replace(/[\\[\\]']+/g, \"\");            // delete [\nx1 = x1.replace(/[\\]\\]']+/g, \"\");            // delete ]\nx1 = x1.replace(/[\\{}\\]']+/g, \"\");           // delete {}\nx1 = x1.replace(/[\\\"\"\\]']+/g, \"\");           // delete \"\"\n\nx1 = x1.split(\",\")\n\nflow.set(\"p1SCheck\", x1[1].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p2SCheck\", x1[29].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p3SCheck\", x1[36].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p4SCheck\", x1[43].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p5SCheck\", x1[50].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p6SCheck\", x1[57].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p7SCheck\", x1[64].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p8SCheck\", x1[71].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p9SCheck\", x1[78].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p10SCheck\", x1[8].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p11SCheck\", x1[15].replace(\"Inference:Class:\", \"\"))\nflow.set(\"p12SCheck\", x1[22].replace(\"Inference:Class:\", \"\"))\n\n//p1 = flow.get(\"p1FCheck\")\n//p2 = flow.get(\"p2FCheck\")\n//msg.payload = {p1:p1.p1,p2}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "e5cee19262ec77e5",
+                "dfc9c443a2df0047"
+            ]
+        ]
+    },
+    {
+        "id": "a72bb6f9e2072552",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "Debug FCheck",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e5cee19262ec77e5",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Debug node",
+        "func": "var a = {}\n\nfor (let i = 1; i <= 12; i++) {\n    //var palletsFCheck = flow.get(\"p\" + [i] + \"FCheck\")\n    var palletsSCheck = flow.get(\"p\" + [i] + \"SCheck\")\n\n\n    a[\"p\" + [i] + \"SCheck\"] = palletsSCheck\n\n\n}\n\nmsg.payload = a\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "c64ed0b42622883c"
+            ]
+        ]
+    },
+    {
+        "id": "c64ed0b42622883c",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "Debug SCheck",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "487c029536d27c17",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "e4f109ffdfa86c6e",
+        "type": "inject",
+        "z": "438d7bbd.346164",
         "name": "",
         "props": [
             {
@@ -28,19 +726,267 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
-        "y": 140,
+        "x": 640,
+        "y": 780,
         "wires": [
             [
-                "e429194de2c8d383"
+                "a5c29ef6283e0ac9"
             ]
         ]
     },
     {
-        "id": "e429194de2c8d383",
+        "id": "a5c29ef6283e0ac9",
+        "type": "change",
+        "z": "438d7bbd.346164",
+        "name": "P1 P FC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "p7FCheck",
+                "pt": "flow",
+                "to": "Pallet",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 780,
+        "wires": [
+            [
+                "b8176b44fcdb7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "02b4ea325a678117",
+        "type": "inject",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 640,
+        "y": 860,
+        "wires": [
+            [
+                "84324126fea6709e"
+            ]
+        ]
+    },
+    {
+        "id": "84324126fea6709e",
+        "type": "change",
+        "z": "438d7bbd.346164",
+        "name": "P1 NO FC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "p4FCheck",
+                "pt": "flow",
+                "to": "noPallet",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "p3FCheck",
+                "pt": "flow",
+                "to": "noPallet",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 860,
+        "wires": [
+            [
+                "b8176b44fcdb7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "f3a9e5f07e8f55d0",
+        "type": "inject",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1020,
+        "y": 780,
+        "wires": [
+            [
+                "ae31f98fb4aad6f0"
+            ]
+        ]
+    },
+    {
+        "id": "ae31f98fb4aad6f0",
+        "type": "change",
+        "z": "438d7bbd.346164",
+        "name": "P1 P SC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "p7SCheck",
+                "pt": "flow",
+                "to": "Pallet",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 780,
+        "wires": [
+            [
+                "b8176b44fcdb7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "225dc394ba4bfd31",
+        "type": "inject",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1040,
+        "y": 840,
+        "wires": [
+            [
+                "21de5f3af7638f6c"
+            ]
+        ]
+    },
+    {
+        "id": "21de5f3af7638f6c",
+        "type": "change",
+        "z": "438d7bbd.346164",
+        "name": "P1 NO SC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "p4SCheck",
+                "pt": "flow",
+                "to": "noPallet",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "p3SCheck",
+                "pt": "flow",
+                "to": "noPallet",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 840,
+        "wires": [
+            [
+                "b8176b44fcdb7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "dfc9c443a2df0047",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Trigger Set",
+        "func": "\nvar a={}\nfor (var i = 1; i <= 12; i++) {\n\n    var palletsFCheck = flow.get(\"p\" + [i] + \"FCheck\")\n    var palletsSCheck = flow.get(\"p\" + [i] + \"SCheck\")\n    var triggerP = flow.get(\"triggerP\" + [i]) || false\n\n    if (triggerP == false) {\n        if ((palletsFCheck == \"noPallet\") && (palletsSCheck == \"noPallet\")) {\n            triggerP = true\n            msg.payload = (i)\n            node.send (msg)\n            \n        }\n        flow.set(\"triggerP\" + [i], triggerP)\n        \n    }\n    else if (triggerP == true) {\n        if ((palletsFCheck == \"Pallet\") && (palletsSCheck == \"Pallet\")) {\n            triggerP = false\n        }\n        flow.set(\"triggerP\" + [i], triggerP)\n    }\n    triggerP = flow.get(\"triggerP\" + [i])\n    a[\"triggerP\" + [i]] = triggerP\n    //msg.payload = {[\"triggerP\" +[i]]: triggerP}\n    //node.send(msg);\n\n}\nmsg.payload = a\nreturn msg\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 480,
+        "wires": [
+            [
+                "487c029536d27c17",
+                "eb79aa4109efb7b2"
+            ]
+        ]
+    },
+    {
+        "id": "332ccfc8e9748484",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Debug node",
+        "func": "var a = {}\n\nfor (let i = 1; i <= 12; i++) {\n    var palletsFCheck = flow.get(\"p\" + [i] + \"FCheck\")\n    //var palletsSCheck = flow.get(\"p\" + [i] + \"SCheck\")\n\n\n    a[\"p\" + [i] + \"FCheck\"] = palletsFCheck\n\n\n}\n\nmsg.payload = a\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "a72bb6f9e2072552"
+            ]
+        ]
+    },
+    {
+        "id": "cb31df7fb8e31f53",
         "type": "debug",
-        "z": "a9cbd4fb4c18d665",
-        "name": "debug 1",
+        "z": "438d7bbd.346164",
+        "name": "debug 12",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -48,8 +994,711 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
-        "y": 140,
+        "x": 1820,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "cdcb12087c68fb4e",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Build message",
+        "func": "var timestamp = global.get(\"moment\");\nvar kanban = msg.payload\n\n\nmsg.payload = {\n    \"header\":\n    {\n        \"headerId\": __msgid__,\n        \"timeStamp\": timestamp().format(\"YYYY-MM-DDTHH:mm:ss.ms\")},\n    \"kanban_json\":\n    {\n        \"kanbannumber\": kanban,\n        \"kanbanstatus\": \"2\"\n    }\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 560,
+        "wires": [
+            [
+                "cb31df7fb8e31f53",
+                "235430e910433e47"
+            ]
+        ]
+    },
+    {
+        "id": "ef64b47b95e4f42a",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "eb79aa4109efb7b2",
+        "type": "function",
+        "z": "438d7bbd.346164",
+        "name": "Map kanban number",
+        "func": "let dict = {\n    0: \"0000\",\n    1: \"1111\",\n    2: \"2222\",\n    3: \"3333\",\n    4: \"4444\",\n    5: \"5555\",\n    6: \"6666\",\n    7: \"7777\",\n    8: \"8888\",\n    9: \"9999\",\n    10: \"1010\",\n    11: \"1011\",\n    12: \"1012\"\n}\nvar pallet = msg.payload\nif(pallet >= 0) {\nmsg.payload = dict[pallet]\nnode.send(msg)}\n//return msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 560,
+        "wires": [
+            [
+                "ef64b47b95e4f42a",
+                "6ad24b0c7ff6e53d"
+            ]
+        ]
+    },
+    {
+        "id": "6ad24b0c7ff6e53d",
+        "type": "delay",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1470,
+        "y": 560,
+        "wires": [
+            [
+                "cdcb12087c68fb4e"
+            ]
+        ]
+    },
+    {
+        "id": "235430e910433e47",
+        "type": "mqtt out",
+        "z": "438d7bbd.346164",
+        "name": "",
+        "topic": "test",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c4a39d44b18097ac",
+        "x": 1850,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "3ccb95429c60d758",
+        "type": "comment",
+        "z": "438d7bbd.346164",
+        "name": "Flow description",
+        "info": "\n---\n\nThis workflow is used to make Kanban request for replenishing SCR RAW supermarket based on input from IDS camera. \nThe status of ROIs of camera are checked with HTTP request once at 30 sec and if one ROI is detected empty a message which contains Kanban number for that location is sent to ILDA via MQTT\n\nThere are performed 2 checks for ROIs at 15sec difference and the results are compared to avoid false calls. \nIf result for a ROI is “noPallet” for both checks, a trigger is SET for that ROI and Kanban message is sent. \nThe trigger will be RESET when both results for that ROI will be “Pallet”\n\n---\n\n",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "9e0831945c5d6f79",
+        "type": "comment",
+        "z": "438d7bbd.346164",
+        "name": "Branch description",
+        "info": "",
+        "x": 430,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b8c5be2aef3265ff",
+        "type": "comment",
+        "z": "438d7bbd.346164",
+        "name": "Branch description",
+        "info": "",
+        "x": 430,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e16cb6e44bf20795",
+        "type": "debug",
+        "z": "438d7bbd.346164",
+        "name": "Camera result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 740,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cfe728a9fece6f8a",
+        "type": "http in",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "url": "/test",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "8f753adfef6acd64",
+                "bb2058f09bb4241f"
+            ]
+        ]
+    },
+    {
+        "id": "8f753adfef6acd64",
+        "type": "debug",
+        "z": "ea608869c0300b60",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "67a192194fa94935",
+        "type": "http response",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8867dd48ba065579",
+        "type": "http request",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:1880/test",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "6bc5a7f0081a6785"
+            ]
+        ]
+    },
+    {
+        "id": "5c243ff9361a548e",
+        "type": "inject",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "60c397bf80020d85"
+            ]
+        ]
+    },
+    {
+        "id": "60c397bf80020d85",
+        "type": "change",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Greeting\":\"Hello World!\"}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{\"Content-Type\" : \"application/json\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "8867dd48ba065579"
+            ]
+        ]
+    },
+    {
+        "id": "650f891c11941e7d",
+        "type": "comment",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "info": "Here you set the POST body",
+        "x": 400,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5cc488d429bd1352",
+        "type": "comment",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "info": "Here you set the REST. In this case the IP address is the one of Node-Red machine",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "35164ec4c1a49172",
+        "type": "comment",
+        "z": "ea608869c0300b60",
+        "name": "This examble is used to check the body of a POST REST command. First flow is postting to the seccond one.",
+        "info": "",
+        "x": 490,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e8aa527c9d7dcbf5",
+        "type": "comment",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "info": "Here will be received the POST content",
+        "x": 280,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bb2058f09bb4241f",
+        "type": "change",
+        "z": "ea608869c0300b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "STation 1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "67a192194fa94935"
+            ]
+        ]
+    },
+    {
+        "id": "6bc5a7f0081a6785",
+        "type": "debug",
+        "z": "ea608869c0300b60",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f1f4141662dd9a4f",
+        "type": "debug",
+        "z": "93978e32abdcb633",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "af1ac2a73d3b0e22",
+        "type": "mqtt in",
+        "z": "93978e32abdcb633",
+        "name": "11",
+        "topic": "test1",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "d21eab378c12acdb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "f1f4141662dd9a4f"
+            ]
+        ]
+    },
+    {
+        "id": "40285d730bda92a2",
+        "type": "mqtt out",
+        "z": "93978e32abdcb633",
+        "name": "",
+        "topic": "test1",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d21eab378c12acdb",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6dfce2ae5b5cceff",
+        "type": "inject",
+        "z": "93978e32abdcb633",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "5d32cc6a7c53c9ca"
+            ]
+        ]
+    },
+    {
+        "id": "5d32cc6a7c53c9ca",
+        "type": "change",
+        "z": "93978e32abdcb633",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Greeting\":\"Hello World!\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "40285d730bda92a2"
+            ]
+        ]
+    },
+    {
+        "id": "8b0fa69195246f3a",
+        "type": "inject",
+        "z": "4dc097a62edf8ce5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "59dcd30975692531"
+            ]
+        ]
+    },
+    {
+        "id": "59dcd30975692531",
+        "type": "http request",
+        "z": "4dc097a62edf8ce5",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://gxdb059x.gx.ro.int.vitesco.com:9089/v2/job?apikey=d9bc0ac5761cacfc1ee1b186666f355cc212e92b28c244f07c6a444621b47227",
+        "tls": "bd9317d71adb8575",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "69300cd19424861c",
+                "c455e65bf398f82b"
+            ]
+        ]
+    },
+    {
+        "id": "69300cd19424861c",
+        "type": "http response",
+        "z": "4dc097a62edf8ce5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 620,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c455e65bf398f82b",
+        "type": "debug",
+        "z": "4dc097a62edf8ce5",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c12b315cfcd45778",
+        "type": "ui_template",
+        "z": "d69f010f88d7245c",
+        "group": "1191ee52ec79052a",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<svg width=\"300px\" height=\"150px\" version=\"1.1\">\n    <g id=\"Button_Long\">\n\n        <!--link-->\n        <a href=\"\" target=\"_blank\" rel=\"noopener\" ng-click=\"send({payload: 'your payload'})\">\n\n            <!-- border shape rounded-->\n            <g ng-style=\"{fill: (msg.payload || 0) ? 'blue' : 'yellow'}\">\n                <rect width=\"300\" height=\"150\" rx=\"30\" ry=\"30\" />\n            </g>\n\n            <!-- text-->\n            <g ng-style=\"{fill: '#d7004b'}\">\n                <text x=\"150\" y=\"40\" style=\"text-anchor:middle\" font-weight=\"bold\" font-size=\"35\"\n                    font-family=\"Arial\">Ambalaje Housing</text>\n            </g>\n\n            <!-- image-->\n            <g>\n                <image x=\"130\" y=\"50\" href=\"/res/agilox.png\" height=\"90\" />\n            </g>\n        </a>\n    </g>\n</svg>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "3cf511fb52f6e5f5"
+            ]
+        ]
+    },
+    {
+        "id": "59a8f8d6eb798138",
+        "type": "inject",
+        "z": "d69f010f88d7245c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "c12b315cfcd45778"
+            ]
+        ]
+    },
+    {
+        "id": "3cf511fb52f6e5f5",
+        "type": "debug",
+        "z": "d69f010f88d7245c",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "35b0a530fdb45a9b",
+        "type": "inject",
+        "z": "5e3df4704a9ea4cf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "f2dbc7260b6a0a3d",
+                "2c1a26fe33e4388e"
+            ]
+        ]
+    },
+    {
+        "id": "f2dbc7260b6a0a3d",
+        "type": "debug",
+        "z": "5e3df4704a9ea4cf",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2c1a26fe33e4388e",
+        "type": "template",
+        "z": "5e3df4704a9ea4cf",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{Hello}} !",
+        "output": "str",
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "5546ee58909af397",
+                "f2dbc7260b6a0a3d"
+            ]
+        ]
+    },
+    {
+        "id": "5546ee58909af397",
+        "type": "e-mail",
+        "z": "5e3df4704a9ea4cf",
+        "server": "smtp.vitesco-technologies.net",
+        "port": "25",
+        "secure": false,
+        "tls": false,
+        "name": "valentin.nedelcu@vitesco.com",
+        "dname": "",
+        "x": 810,
+        "y": 400,
         "wires": []
     }
 ]
