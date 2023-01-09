@@ -47,6 +47,14 @@
         "env": []
     },
     {
+        "id": "cb1de2b42a4ba1d1",
+        "type": "tab",
+        "label": "Chip-Nemo traffic",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "b8176b44fcdb7bbf",
         "type": "junction",
         "z": "438d7bbd.346164",
@@ -1700,5 +1708,800 @@
         "x": 810,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "fddbc69101315d26",
+        "type": "http request",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://gxdb059x.gx.ro.int.vitesco.com:9089/v2/droid?apikey=d9bc0ac5761cacfc1ee1b186666f355cc212e92b28c244f07c6a444621b47227",
+        "tls": "bd9317d71adb8575",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": true,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            }
+        ],
+        "x": 1050,
+        "y": 560,
+        "wires": [
+            [
+                "3c76f80926739f66"
+            ]
+        ]
+    },
+    {
+        "id": "3c76f80926739f66",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "ON Chip Barrier",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "26df7a3de7e38adb",
+        "type": "mqtt in",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Chip State",
+        "topic": "uagv/v2/rexroth/ad83b742-123e-11ec-b533-c4da4b810b01/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "effc18dde6adcb36",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 340,
+        "wires": [
+            [
+                "82147f15f0078051",
+                "45ed5997f28aa12e",
+                "e55ca7cee0f170a2"
+            ]
+        ]
+    },
+    {
+        "id": "82147f15f0078051",
+        "type": "function",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "function 1",
+        "func": "var x = msg.payload.agvPosition.x\nvar y = Number(msg.payload.agvPosition.y) * -1\n\nif (-31 < x && x<-22 && 0 < y && y < 5) {\n    msg.payload = \"barrier ON\"\n\n}\nelse if (-22 < x && x < -20 && 0 < y && y < 2) {\n    msg.payload = \"barrier OFF\"\n}\nelse {msg.payload = {x: x, y:y}\n\n}\n//msg.payload = y\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "86a28767ffda2efa",
+                "1b53aa0448407f50",
+                "a2d3765704d7e4fb"
+            ]
+        ]
+    },
+    {
+        "id": "86a28767ffda2efa",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 21",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f9dd46018c8b38c3",
+        "type": "trigger",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Set message ON  & freq",
+        "op1": "[{\"toggle\":\"Nemo-Chip_Barrier\",\"command\":\"on\"}]",
+        "op2": "0",
+        "op1type": "json",
+        "op2type": "str",
+        "duration": "-2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1190,
+        "y": 120,
+        "wires": [
+            [
+                "33c73dcaac0132db"
+            ]
+        ]
+    },
+    {
+        "id": "1b53aa0448407f50",
+        "type": "switch",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "barrier ON",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "barrier ON",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "barrier ON",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "f9dd46018c8b38c3"
+            ],
+            [
+                "ce3a1d531caf0ad9"
+            ]
+        ]
+    },
+    {
+        "id": "ce3a1d531caf0ad9",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "set",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 280,
+        "wires": [
+            [
+                "f9dd46018c8b38c3"
+            ]
+        ]
+    },
+    {
+        "id": "33c73dcaac0132db",
+        "type": "http request",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Barrier ON",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://10.226.150.204:8100/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1430,
+        "y": 120,
+        "wires": [
+            [
+                "659c593d6f96e8c9"
+            ]
+        ]
+    },
+    {
+        "id": "a2d3765704d7e4fb",
+        "type": "switch",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "barrier OFF",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "barrier OFF",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "barrier OFF",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 500,
+        "wires": [
+            [
+                "50153cceae573e92"
+            ],
+            [
+                "7d617408543e4f21"
+            ]
+        ]
+    },
+    {
+        "id": "50153cceae573e92",
+        "type": "trigger",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Set message OFF  & freq",
+        "op1": "[{\"toggle\":\"Nemo-Chip_Barrier\",\"command\":\"off\"}]",
+        "op2": "0",
+        "op1type": "json",
+        "op2type": "str",
+        "duration": "-500",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1190,
+        "y": 360,
+        "wires": [
+            [
+                "4b48a686cb44534f"
+            ]
+        ]
+    },
+    {
+        "id": "7d617408543e4f21",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "set",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 520,
+        "wires": [
+            [
+                "50153cceae573e92"
+            ]
+        ]
+    },
+    {
+        "id": "659c593d6f96e8c9",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "ON Nemo Barrier ",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9d0a927c8abb278a",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Pause Chip",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"_id\":\"62f502c8aadb6f00012bb6df\",\"desired\":{\"hold\":true}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PATCH",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 620,
+        "wires": [
+            [
+                "fddbc69101315d26",
+                "152d449e5cf5383d"
+            ]
+        ]
+    },
+    {
+        "id": "25d33eca6702d1a3",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Resume Chip",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"_id\":\"62f502c8aadb6f00012bb6df\",\"desired\":{\"hold\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PATCH",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 800,
+        "wires": [
+            [
+                "eaae2fb8f21ace5d"
+            ]
+        ]
+    },
+    {
+        "id": "eae770cb5a49d767",
+        "type": "http in",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Nemo",
+        "url": "/Chip_L4",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "e2bcba05065eefeb",
+                "e11b0e408985946f",
+                "4f06b285d99dc7cf"
+            ]
+        ]
+    },
+    {
+        "id": "e11b0e408985946f",
+        "type": "switch",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "barrier_ON",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "barrier_OFF",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "fbfa260b24823a9b"
+            ],
+            [
+                "2495cd04d83699a3"
+            ]
+        ]
+    },
+    {
+        "id": "e2bcba05065eefeb",
+        "type": "http response",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 250,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "45ed5997f28aa12e",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e55ca7cee0f170a2",
+        "type": "function",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "function 4",
+        "func": "\nvar wp1 = msg.payload.nodeStates[0].nodeDescription\nvar wp2 = msg.payload.nodeStates[1].nodeDescription\nflow.set(\"pause\", msg.payload.paused)\nvar area = flow.get (\"on_area\") || false\nif ((wp1 == \"Waypoint_124\" && wp2 == \"Waypoint_132\") || (wp1 == \"Waypoint_132\" && wp2 == \"Waypoint_145\")){\n    flow.set (\"on_area\", true)\n    node.status({ fill: \"red\", shape: \"dot\", text: \"on_area\" })\n}\nelse{\n    flow.set(\"on_area\", false)\n    node.status({ fill: \"yellow\", shape: \"ring\", text: \"NOT on_area\" })\n}\n\nmsg.payload=[wp1,wp2]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "1d1f7ba3181d9e4b"
+            ]
+        ]
+    },
+    {
+        "id": "1d1f7ba3181d9e4b",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "56a855e5c230e88c",
+        "type": "catch",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "scope": [
+            "e55ca7cee0f170a2"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "5038d5915de1800d"
+            ]
+        ]
+    },
+    {
+        "id": "fbfa260b24823a9b",
+        "type": "function",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "function 5",
+        "func": "var area = flow.get(\"on_area\") || false\nvar pause = flow.get(\"pause\") || false\nif (area == true && pause == false) {\n\n    node.send(msg)\n\n\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "9d0a927c8abb278a"
+            ]
+        ]
+    },
+    {
+        "id": "5038d5915de1800d",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 27",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4f06b285d99dc7cf",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 380,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4b48a686cb44534f",
+        "type": "http request",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Barrier OFF",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://10.226.150.204:8100/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1430,
+        "y": 360,
+        "wires": [
+            [
+                "9886af7002fe32e4"
+            ]
+        ]
+    },
+    {
+        "id": "9886af7002fe32e4",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "OFF Nemo Barrier ",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "280566cb67b80dc3",
+        "type": "mqtt out",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "Display",
+        "topic": "uagv/v2/rexroth/ad83b742-123e-11ec-b533-c4da4b810b01/display",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "effc18dde6adcb36",
+        "x": 1420,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "dc91717d4c786fd7",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"vehicleName\":\"Astept sa treaca NEMO\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 680,
+        "wires": [
+            [
+                "280566cb67b80dc3",
+                "1683ebb58e08309e"
+            ]
+        ]
+    },
+    {
+        "id": "eaae2fb8f21ace5d",
+        "type": "http request",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://gxdb059x.gx.ro.int.vitesco.com:9089/v2/droid?apikey=d9bc0ac5761cacfc1ee1b186666f355cc212e92b28c244f07c6a444621b47227",
+        "tls": "bd9317d71adb8575",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": true,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            }
+        ],
+        "x": 1010,
+        "y": 800,
+        "wires": [
+            [
+                "0aeabe126397b725",
+                "222e0a19ce8b5b87"
+            ]
+        ]
+    },
+    {
+        "id": "0aeabe126397b725",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "OFF Chip Barrier",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "2495cd04d83699a3",
+        "type": "function",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "function 6",
+        "func": "var area = flow.get(\"on_area\") || false\nvar pause = flow.get(\"pause\") || false\nif (pause == true) {\n\n    node.send(msg)\n\n\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 800,
+        "wires": [
+            [
+                "25d33eca6702d1a3"
+            ]
+        ]
+    },
+    {
+        "id": "1683ebb58e08309e",
+        "type": "debug",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1420,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "222e0a19ce8b5b87",
+        "type": "change",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "set",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 740,
+        "wires": [
+            [
+                "152d449e5cf5383d"
+            ]
+        ]
+    },
+    {
+        "id": "152d449e5cf5383d",
+        "type": "trigger",
+        "z": "cb1de2b42a4ba1d1",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1000,
+        "y": 680,
+        "wires": [
+            [
+                "dc91717d4c786fd7"
+            ]
+        ]
     }
 ]
